@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBudget Planner - Achievements</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TaskBudget Planner</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                <li class="nav-item"><a href="budget.html" class="nav-link">Budget</a></li>
+                <li class="nav-item"><a href="achievements.html" class="nav-link active">Achievements</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link btn-logout">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Your Achievements</h1>
+            <button class="btn btn-primary" id="refreshAchievements">Refresh</button>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Achievements</h3>
+                <p id="totalAchievements">0</p>
+            </div>
+        </div>
+
+        <div class="achievements-list" id="achievementsList">
+            <!-- Achievements will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/achievements.js"></script>
+</body>
+</html>

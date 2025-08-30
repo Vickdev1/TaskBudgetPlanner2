@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBudget Planner - Budget</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TaskBudget Planner</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                <li class="nav-item"><a href="budget.html" class="nav-link active">Budget</a></li>
+                <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link btn-logout">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Budget Management</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" id="addIncomeBtn">Add Income</button>
+                <button class="btn btn-secondary" id="addExpenseBtn">Add Expense</button>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Balance</h3>
+                <p id="totalBalance">$0.00</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Income</h3>
+                <p id="totalIncome">$0.00</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpenses">$0.00</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <select id="typeFilter">
+                <option value="all">All Transactions</option>
+                <option value="income">Income Only</option>
+                <option value="expense">Expenses Only</option>
+            </select>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="salary">Salary</option>
+                <option value="freelance">Freelance</option>
+                <option value="investment">Investment</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="utilities">Utilities</option>
+            </select>
+            <input type="month" id="monthFilter" value="">
+        </div>
+
+        <div class="transactions-list" id="transactionsList">
+            <!-- Transactions will be dynamically inserted here -->
+        </div>
+
+        <!-- Add/Edit Transaction Modal -->
+        <div class="modal" id="transactionModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Add Transaction</h2>
+                <form id="transactionForm">
+                    <input type="hidden" id="transactionId">
+                    <input type="hidden" id="transactionType" value="income">
+                    <div class="form-group">
+                        <label for="transactionAmount">Amount</label>
+                        <input type="number" id="transactionAmount" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionDescription">Description</label>
+                        <input type="text" id="transactionDescription" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionCategory">Category</label>
+                        <select id="transactionCategory" required>
+                            <option value="">Select Category</option>
+                            <optgroup label="Income">
+                                <option value="salary">Salary</option>
+                                <option value="freelance">Freelance</option>
+                                <option value="investment">Investment</option>
+                                <option value="other_income">Other Income</option>
+                            </optgroup>
+                            <optgroup label="Expenses">
+                                <option value="food">Food</option>
+                                <option value="transport">Transport</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="rent">Rent</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="other_expense">Other Expense</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionDate">Date</label>
+                        <input type="date" id="transactionDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Save Transaction</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/budget.js"></script>
+</body>
+</html>

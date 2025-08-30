@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: taskbudget-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - taskbudget-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: taskbudget-backend
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=taskbudget
+      - DB_USER=taskuser
+      - DB_PASSWORD=taskpassword
+    ports:
+      - "9000:9000"
+    depends_on:
+      - postgres
+    networks:
+      - taskbudget-net
+  postgres:
+    image: postgres:15-alpine
+    container_name: taskbudget-db
+    environment:
+      - POSTGRES_DB=taskbudget
+      - POSTGRES_USER=taskuser
+      - POSTGRES_PASSWORD=taskpassword
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - taskbudget-net
+
+volumes:
+  pgdata:
+
+networks:
+  taskbudget-net:
+    driver: bridge

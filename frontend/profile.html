@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskBudget Planner - Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TaskBudget Planner</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="tasks.html" class="nav-link">Tasks</a></li>
+                <li class="nav-item"><a href="budget.html" class="nav-link">Budget</a></li>
+                <li class="nav-item"><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link active">Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link btn-logout">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Your Profile</h1>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <span id="profileInitials">JD</span>
+                    </div>
+                    <h2 id="profileName">John Doe</h2>
+                    <p id="profileEmail">john@example.com</p>
+                    <p class="profile-meta">Member since: <span id="memberSince">Jan 2023</span></p>
+                </div>
+
+                <div class="stats-card">
+                    <h3>Your Stats</h3>
+                    <div class="stat-item">
+                        <span>Total Tasks</span>
+                        <strong id="totalTasksStat">0</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Completed Tasks</span>
+                        <strong id="completedTasksStat">0</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Completion Rate</span>
+                        <strong id="completionRateStat">0%</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Total Transactions</span>
+                        <strong id="totalTransactionsStat">0</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Total Income</span>
+                        <strong id="totalIncomeStat">$0.00</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Total Expenses</span>
+                        <strong id="totalExpensesStat">$0.00</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Achievements</span>
+                        <strong id="achievementsStat">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="card">
+                    <h3>Edit Profile</h3>
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="profileNameInput">Full Name</label>
+                            <input type="text" id="profileNameInput" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileEmailInput">Email Address</label>
+                            <input type="email" id="profileEmailInput" disabled>
+                            <small>Email cannot be changed</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "docker-compose",
+      "request": "launch",
+      "name": "Debug docker-compose services",
+      "dockerComposeFile": "${workspaceFolder}/docker-compose.yml",
+      "service": "${input:serviceName}",
+      "platform": "linux",
+      "removeContainerAfterDebug": true
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serviceName",
+      "type": "pickString",
+      "description": "Select the service to debug",
+      "options": [
+        "backend",
+        "frontend",
+        "postgres"
+      ]
+    }
+  ]
+}

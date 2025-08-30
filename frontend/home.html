@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Budget Planner | Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h2>TaskBudget</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html" class="nav-link active">Dashboard</a></li>
+            <li><a href="tasks.html" class="nav-link">Tasks</a></li>
+            <li><a href="budget.html" class="nav-link">Budget</a></li>
+            <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+            <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="welcome-section">
+            <h1>Welcome, <span id="userName">User</span>!</h1>
+            <p>Here's your productivity overview</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <h3>Pending Tasks</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <h3>Current Balance</h3>
+                <p id="currentBalance">$0.00</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <h3>Task Streak</h3>
+                <p id="taskStreak">0 days</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <h3>Badges Earned</h3>
+                <p id="badgesCount">0</p>
+            </div>
+        </div>
+
+        <div class="recent-activities">
+            <h2>Recent Activities</h2>
+            <div id="recentActivities" class="activities-list">
+                <!-- Activities will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
